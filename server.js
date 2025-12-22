@@ -11,7 +11,7 @@ const app = express();
 // Allow requests only from your frontend
 const allowedOrigins = [
   "https://www.drsa.com",
-  "https://elipsestudio.com/",  // add more domains as needed
+  "https://elipsestudio.com",  // add more domains as needed
   
 ];
 
