@@ -2,10 +2,19 @@ import express from "express";
 import nodemailer from "nodemailer";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
+
+// Allow requests only from your frontend
+app.use(cors({
+  origin: "https://www.drsa.com",
+  methods: ["POST", "GET"],
+  credentials: true,
+}));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -31,7 +40,7 @@ app.post("/send-quote", async (req, res) => {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // or the Lumishore quote email
+      to: process.env.EMAIL_USER, // your receiving email
       subject: `New Quote Request from ${name}`,
       text: `
         Name: ${name}
