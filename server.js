@@ -54,8 +54,8 @@ app.post("/send-quote", async (req, res) => {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      // to: 'sales@drsa.com', // your receiving email
-      to: 'mahmedzaki670@gmail.com', // your receiving email
+      to: 'sales@drsa.com', // your receiving email
+      // to: 'mahmedzaki670@gmail.com', // your receiving email
       subject: `New Quote Request from ${name}`,
       text: `
         Name: ${name}
