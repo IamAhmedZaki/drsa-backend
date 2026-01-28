@@ -12,6 +12,7 @@ const app = express();
 const allowedOrigins = [
   "https://www.drsa.com",
   "https://elipsestudio.com",  // add more domains as needed
+  "http://127.0.0.1:5513/",  // add more domains as needed
   
 ];
 
