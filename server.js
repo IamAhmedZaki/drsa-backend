@@ -12,7 +12,6 @@ const app = express();
 const allowedOrigins = [
   "https://www.drsa.com",
   "https://elipsestudio.com",  // add more domains as needed
-  "http://127.0.0.1:5513/",  // add more domains as needed
   
 ];
 
@@ -55,7 +54,7 @@ app.post("/send-quote", async (req, res) => {
 
     const mailOptions = {
       from: 'sales@drsa.com',
-      to: 'mahmedzaki670@gmail.com', // your receiving email
+      to: 'sales@drsa.com', // your receiving email
       // to: 'mahmedzaki670@gmail.com', // your receiving email
       subject: `New Quote Request from ${name}`,
       text: `
